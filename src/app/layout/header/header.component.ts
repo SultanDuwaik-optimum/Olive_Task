@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeColorDirective } from 'src/app/directives/theme-color.directive';
 import { ToolBarFontColorsDirective } from 'src/app/directives/tool-bar-font-colors.directive';
+import {  Router, RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { ToolBarFontColorsDirective } from 'src/app/directives/tool-bar-font-col
   standalone: true,
   imports: [ SvgStrokeDirective,
     MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule, MatToolbarModule,
-     MatButton, ThemeColorDirective,ToolBarFontColorsDirective
+     MatButton, ThemeColorDirective,ToolBarFontColorsDirective, RouterOutlet
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -23,4 +24,11 @@ import { ToolBarFontColorsDirective } from 'src/app/directives/tool-bar-font-col
 export class HeaderComponent {
 
   searchValue: string = '';
+  constructor(private router: Router) {}
+
+  navigateToProfile(){
+    console.log("ddddd");
+    this.router.navigate(['/profile']);
+
+  }
 }
