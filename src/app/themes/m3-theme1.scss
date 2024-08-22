@@ -1,0 +1,376 @@
+@use 'sass:map';
+@use '../../../node_modules/@angular/material' as mat;
+
+
+// Note: Color palettes are generated from primary: #F15928, secondary: #787CA9, tertiary: #E1EAF9, neutral: #F3F3F3
+$palettes: (
+  primary: (
+    0: #000000,
+    10: #3a0a00,
+    20: #5f1600,
+    25: #721c00,
+    30: #862300,
+    35: #9a2a00,
+    40: #af3000,
+    50: #F15928,
+    60: #f85e2d,
+    70: #ff8b68,
+    80: #ffb59f,
+    90: #ffdbd1,
+    95: #ffede8,
+    98: #fff8f6,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  secondary: (
+    0: #000000,
+    10: #13173f,
+    20: #292d55,
+    25: #343861,
+    30: #3f436d,
+    35: #4b4f79,
+    40: #575b86,
+    50: #787CA9,
+    60: #898dbb,
+    70: #a4a8d7,
+    80: #bfc3f4,
+    90: #dfe0ff,
+    95: #f1efff,
+    98: #fbf8ff,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  tertiary: (
+    0: #000000,
+    10: #131c27,
+    20: #232323,
+    25: #333c48,
+    30: #3e4753,
+    35: #4a535f,
+    40: #565f6c,
+    50: #E1EAF9,
+    60: #88919f,
+    70: #a3acba,
+    80: #bec7d6,
+    90: #dae3f2,
+    95: #e9f1ff,
+    98: #f8f9ff,
+    99: #fdfcff,
+    100: #ffffff,
+  ),
+  neutral: (
+    0: #000000,
+    4: #0a0b0b,
+    6: #101111,
+    10: #1a1c1c,
+    12: #1e2020,
+    17: #292b2b,
+    20: #565656,
+    22: #333535,
+    24: #383a3a,
+    25: #3a3c3c,
+    30: #454747,
+    35: #515353,
+    40: #5d5f5f,
+    50: #F3F3F3,
+    60: #909191,
+    70: #aaabab,
+    80: #c6c6c7,
+    87: #dadada,
+    90: #e2e2e2,
+    92: #e8e8e8,
+    94: #eeeeee,
+    95: #f1f1f1,
+    96: #f4f4f4,
+    98: #f9f9f9,
+    99: #fcfcfc,
+    100: #ffffff,
+  ),
+  neutral-variant: (
+    0: #000000,
+    10: #2a1711,
+    20: #412b24,
+    25: #4e362f,
+    30: #5a413a,
+    35: #674c45,
+    40: #745850,
+    50: #8e7068,
+    60: #aa8a81,
+    70: #c6a49a,
+    80: #e2bfb5,
+    90: #ffdbd1,
+    95: #ffede8,
+    98: #fff8f6,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  error: (
+    0: #000000,
+    10: #410002,
+    20: #690005,
+    25: #7e0007,
+    30: #93000a,
+    35: #a80710,
+    40: #ba1a1a,
+    50: #FA5252,
+    60: #ff5449,
+    70: #ff897d,
+    80: #ffb4ab,
+    90: #ffdad6,
+    95: #ffedea,
+    98: #fff8f7,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+);
+
+$rest: (
+  secondary: map.get($palettes, secondary),
+  neutral: map.get($palettes, neutral),
+  neutral-variant: map.get($palettes,  neutral-variant),
+  error: map.get($palettes, error),
+);
+$primary: map.merge(map.get($palettes, primary), $rest);
+$tertiary: map.merge(map.get($palettes, tertiary), $rest);
+
+$light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: $primary,
+    tertiary: $tertiary,
+  )
+));
+
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: $primary,
+    tertiary: $tertiary,
+    )
+
+));
+
+@include mat.core();
+@include mat.color-variants-backwards-compatibility($light-theme);
+
+
+@mixin apply-light-theme {
+  @include mat.all-component-themes($light-theme);
+  @include mat.system-level-colors($light-theme);
+  @include mat.system-level-typography($light-theme);
+
+
+  .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 8px ;
+  }
+
+  .custom-search-field{
+    .mdc-text-field--outlined {
+      --mdc-outlined-text-field-container-shape: 26px !important;
+    }
+  }
+
+
+  mat-toolbar{
+    background-color: mat.get-theme-color($light-theme, tertiary, 50);
+  }
+
+  mat-sidenav-container{
+    background-color: mat.get-theme-color($light-theme, tertiary, 50);
+
+  }
+  mat-sidenav-content li:hover{
+    background-color: mat.get-theme-color($light-theme, primary, 50);
+  }
+
+
+
+  .primary-color{
+    background-color: mat.get-theme-color($light-theme, primary, 50);
+  }
+  
+  .secondary-color{
+    background-color: mat.get-theme-color($light-theme, secondary ,50);
+  }
+
+  .tertiary-color{
+    background-color: mat.get-theme-color($light-theme, tertiary, 50);
+  }
+
+  .neutral-color{
+    background-color: mat.get-theme-color($light-theme, neutral, 50);
+  }
+
+  .dark-tertiary-color{
+     background-color: mat.get-theme-color($light-theme, tertiary, 20);
+  }
+
+  .dark-neutral-color{
+    background-color: mat.get-theme-color($dark-theme, neutral, 20);
+  }
+
+  .light-tertiary-color{
+    background-color: mat.get-theme-color($dark-theme, tertiary, 50);
+  }
+
+  .light-neutral-color{
+    background-color: mat.get-theme-color($light-theme, neutral, 50);
+  }
+
+  .error-color {
+    background-color: mat.get-theme-color($light-theme, error, 50);
+  }
+
+  .light1.color-theme {
+    background-color: mat.get-theme-color($light-theme, primary, 50);
+  }
+
+  .toolbar-font-color{
+    color: mat.get-theme-color($light-theme, neutral, 0);
+  }
+
+  .body-font-color{
+    color: mat.get-theme-color($light-theme, neutral, 0);
+  }
+
+  .body-font-color-light-bg{
+    color: mat.get-theme-color($dark-theme, neutral, 0);
+  }
+  .body-font-color-dark-bg{
+    color: mat.get-theme-color($dark-theme, neutral, 100);
+  }
+
+  .svg-stroke{
+    stroke: mat.get-theme-color($light-theme, neutral, 0);
+  }
+
+  .svg-fill{
+    fill:  mat.get-theme-color($light-theme, neutral, 0);
+
+  }
+
+  .theme1-primary-color{
+    background-color: #af3000;
+  }
+  .theme2-primary-color{
+    background-color:#c78d8d;
+  }
+  .theme3-primary-color{
+    background-color: #30a800;
+  }
+  .theme4-primary-color{
+    background-color: #85a5d5;
+  }
+  .theme5-primary-color{
+    background-color: #a2e3e0;
+  }
+  .theme6-primary-color{
+    background-color: #d1d1d1;
+  }
+
+
+}
+
+
+@mixin apply-dark-theme {
+  @include mat.all-component-themes($dark-theme);
+  @include mat.system-level-colors($dark-theme);
+  @include mat.system-level-typography($dark-theme);
+
+  mat-toolbar{
+    background-color: mat.get-theme-color($light-theme, tertiary, 20);
+  }
+
+  mat-sidenav-container{
+    background-color: mat.get-theme-color($light-theme, tertiary, 20);
+
+  }
+  mat-sidenav-content li:hover{
+    background-color: mat.get-theme-color($light-theme, primary, 50);
+
+  }
+
+  .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 8px !important;
+  }
+
+  .primary-color{
+    background-color: mat.get-theme-color($light-theme, primary, 50);
+  }
+  
+  .secondary-color{
+    background-color: mat.get-theme-color($light-theme, secondary, 50);
+  }
+
+  .tertiary-color{
+    background-color: mat.get-theme-color($light-theme, tertiary, 20);
+  }
+
+  .neutral-color{
+    background-color: mat.get-theme-color($light-theme, neutral, 20);
+  }
+
+  .dark-tertiary-color{
+     background-color: mat.get-theme-color($light-theme, tertiary, 20);
+  }
+
+  .dark-neutral-color{
+    background-color: mat.get-theme-color($light-theme, neutral, 20);
+  }
+
+  .light-tertiary-color{
+    background-color: mat.get-theme-color($light-theme, tertiary, 50);
+  }
+
+  .light-neutral-color{
+    background-color: mat.get-theme-color($light-theme, neutral, 50);
+  }
+
+  .error-color {
+    background-color: mat.get-theme-color($dark-theme, error,50);
+  }
+
+
+  .toolbar-font-color{
+    color: mat.get-theme-color($dark-theme, neutral, 100);
+  }
+
+  .body-font-color{
+    color: mat.get-theme-color($dark-theme, neutral, 100);
+  }
+
+  .body-font-color-light-bg{
+    color: mat.get-theme-color($dark-theme, neutral, 0);
+  }
+  .body-font-color-dark-bg{
+    color: mat.get-theme-color($dark-theme, neutral, 100);
+  }
+
+  .svg-stroke{
+    stroke: mat.get-theme-color($dark-theme, neutral, 100);
+  }
+
+  .svg-fill{
+    fill:  mat.get-theme-color($dark-theme, neutral, 100);
+
+  }
+
+  .theme1-primary-color{
+    background-color: #af3000;
+  }
+  .theme2-primary-color{
+    background-color:#c78d8d;
+  }
+  .theme3-primary-color{
+    background-color: #30a800;
+  }
+  .theme4-primary-color{
+    background-color: #85a5d5;
+  }
+  .theme5-primary-color{
+    background-color: #a2e3e0;
+  }
+  .theme6-primary-color{
+    background-color: #d1d1d1;
+  } 
+}

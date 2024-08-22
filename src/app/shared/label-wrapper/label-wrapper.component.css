@@ -1,0 +1,12 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+.grid:last-child{
+    grid-row: 1/-1;
+}
+
+.is-bold{
+    font-weight: 600;
+}

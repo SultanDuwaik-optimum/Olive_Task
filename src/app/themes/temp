@@ -1,0 +1,96 @@
+@mixin apply-light-theme {
+  @include mat.all-component-themes($dark-theme);
+  @include mat.system-level-colors($dark-theme);
+  @include mat.system-level-typography($dark-theme);
+
+  mat-toolbar{
+    background-color: mat.get-theme-color($dark-theme, tertiary);
+  }
+
+  mat-sidenav-container{
+    background-color: mat.get-theme-color($dark-theme, tertiary);
+
+  }
+
+  .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 8px !important;
+  }
+
+  .primary-color{
+    background-color: mat.get-theme-color($dark-theme, primary);
+  }
+  
+  .secondary-color{
+    background-color: mat.get-theme-color($dark-theme, secondary);
+  }
+
+  .tertiary-color{
+    background-color: mat.get-theme-color($dark-theme, tertiary);
+  }
+
+  .neutral-color{
+    background-color: mat.get-theme-color($dark-theme, neutral, 50);
+  }
+
+  .dark-tertiary-color{
+     background-color: mat.get-theme-color($light-theme, tertiary);
+  }
+
+  .dark-neutral-color{
+    background-color: mat.get-theme-color($light-theme, neutral, 20);
+  }
+
+  .light-tertiary-color{
+    background-color: mat.get-theme-color($dark-theme, tertiary);
+  }
+
+  .light-neutral-color{
+    background-color: mat.get-theme-color($dark-theme, neutral, 50);
+  }
+
+  .error-color {
+    background-color: mat.get-theme-color($dark-theme, error);
+  }
+
+  .light1.color-theme {
+    background-color: mat.get-theme-color($dark-theme, primary);
+  }
+
+  .toolbar-font-color{
+    color: mat.get-theme-color($dark-theme, neutral, 50);
+  }
+
+  .body-font-color{
+    color: mat.get-theme-color($dark-theme, neutral, 0);
+  }
+
+  .svg-stroke{
+    stroke: mat.get-theme-color($dark-theme, neutral, 50);
+  }
+
+  .svg-fill{
+    fill:  mat.get-theme-color($dark-theme, neutral, 0);
+
+  }
+
+  theme1-primary-color{
+    background-color: #af3000;
+  }
+  theme2-primary-color{
+    background-color:#c78d8d;
+  }
+  theme3-primary-color{
+    background-color: #30a800;
+  }
+  theme4-primary-color{
+    background-color: #85a5d5;
+  }
+  theme5-primary-color{
+    background-color: #a2e3e0;
+  }
+  theme6-primary-color{
+    background-color: #d1d1d1;
+  }
+  
+  
+}

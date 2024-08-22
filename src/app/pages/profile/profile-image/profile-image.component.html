@@ -1,0 +1,12 @@
+
+<div appThemeColor="secondary" class="profile-image">
+  <ng-container *ngIf="profileImageUrl">
+    <img [src]="profileImageUrl" alt="Profile Image" />
+
+  </ng-container>
+  <div class="add-button" (click)="triggerFileInput()">+</div>
+</div>
+
+<input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" style="display: none;" />
+
+

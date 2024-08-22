@@ -1,0 +1,4 @@
+<div [ngClass]="{'grid': labelAlignment === 'row'}">
+    <label appBodyFontColors [ngClass]="{'is-bold': isBold}">{{label}}:</label>
+    <ng-content></ng-content>
+</div>
