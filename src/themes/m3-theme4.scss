@@ -1,7 +1,8 @@
-@use 'sass:map';
-@use '../../../node_modules/@angular/material' as mat;
 
-@import '../palettes/palette2.scss';
+@use 'sass:map';
+@use '../../node_modules/@angular/material' as mat;
+
+@import '../palettes/palette4.scss';
 
 
 $light-theme: mat.define-theme((
@@ -9,6 +10,10 @@ $light-theme: mat.define-theme((
     theme-type: light,
     primary: $primary,
     tertiary: $tertiary,
+    use-system-variables: true,
+  ),
+  typography: (
+    use-system-variables: true,
   )
 ));
 
@@ -17,8 +22,11 @@ $dark-theme: mat.define-theme((
     theme-type: dark,
     primary: $primary,
     tertiary: $tertiary,
+    use-system-variables: true,
   ),
-
+  typography: (
+    use-system-variables: true,
+  )
 ));
 
 @include mat.core();
@@ -157,6 +165,7 @@ $dark-theme: mat.define-theme((
     background-color: mat.get-theme-color($light-theme, primary, 50);
 
   }
+
   .mdc-text-field--outlined {
     --mdc-outlined-text-field-container-shape: 8px ;
   }

@@ -1,8 +1,9 @@
 
 @use 'sass:map';
-@use '../../../node_modules/@angular/material' as mat;
+@use '../../node_modules/@angular/material' as mat;
+@import '../palettes/palette5.scss';
 
-@import '../palettes/palette4.scss';
+
 
 
 $light-theme: mat.define-theme((

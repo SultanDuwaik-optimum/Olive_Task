@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ProfileImageComponent } from './profile-image/profile-image.component'
+import { ProfileImageComponent } from '../../shared/profile-image/profile-image.component'
 
 import { Address } from '../../types';
 import { CommonModule } from '@angular/common';
 import { FormGroup, FormsModule, NgForm } from '@angular/forms';
-import { ThemePickerComponent } from './theme-picker/theme-picker.component';
+import { ThemePickerComponent } from '../../shared/theme-picker/theme-picker.component';
 import { MatButtonModule } from '@angular/material/button';
 
 import {FormControl, Validators, ReactiveFormsModule} from '@angular/forms';

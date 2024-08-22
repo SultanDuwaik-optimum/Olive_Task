@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, Renderer2 } from '@angular/core';
-import { ThemeSwitcherService } from '../../../services/theme-switcher.service';
+import { ThemeSwitcherService } from '../../services/theme-switcher.service';
 import { ThemeColorDirective } from 'src/app/directives/theme-color.directive';
 import { SvgFillDirective } from 'src/app/directives/svg-fill.directive';
 import { MatButtonModule } from '@angular/material/button';
