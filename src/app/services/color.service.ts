@@ -8,7 +8,7 @@ import { Themes } from '../types';
 })
 export class ColorService {
 
-  private url = "assets/themes.json";
+  private url = "http://localhost:3000/themes";
   constructor(private apiService: ApiService) { }
 
   getColors(): Observable<Themes> {

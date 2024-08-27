@@ -21,6 +21,13 @@ export interface Theme {
   tertiary: string;
   error: string;
   neutral: string;
+  darkTertiary: string;
+  darkNeutral: string;
+  lightBodyFontColor: string;
+  darkBodyFontColor: string;
+  lightToolbarFontColor: string;
+  darkToolbarFontColor: string;
+  
 }
 
 export interface Themes {
