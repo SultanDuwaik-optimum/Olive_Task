@@ -1,3 +1,4 @@
+import { ColorService } from './color.service';
 import { Injectable , Renderer2, RendererFactory2} from '@angular/core';
 
 @Injectable({
@@ -10,8 +11,9 @@ export class ThemeSwitcherService {
   private isLight: boolean = true;
   private selectedThemeNumber: number = 1;
 
+
   private oldThemeClass = "light1";
-  constructor(rendererFactory: RendererFactory2) {
+  constructor(rendererFactory: RendererFactory2, private colorService: ColorService) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 

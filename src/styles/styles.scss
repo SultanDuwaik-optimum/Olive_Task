@@ -1,0 +1,77 @@
+@use "../../node_modules/@angular/material" as mat;
+
+@use "mixins/theme-utils" as utils;
+@use "mixins/theme-setup" as setup;
+
+@use "palettes/palette1" as palette1;
+@use "palettes/palette2" as palette2;
+@use "palettes/palette3" as palette3;
+@use "palettes/palette4" as palette4;
+@use "palettes/palette5" as palette5;
+@use "palettes/palette6" as palette6;
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  @include setup.apply-all-component-themes;
+  @include mat.core();
+}
+
+
+body {
+  height: 100%;
+
+  &.light1 {
+    @include utils.apply-theme(palette1.$palette, "light");
+  }
+
+  &.dark1 {
+    @include utils.apply-theme(palette1.$palette, "dark");
+  }
+
+  &.light2 {
+    @include utils.apply-theme(palette2.$palette, "light");
+  }
+
+  &.dark2 {
+    @include utils.apply-theme(palette2.$palette, "dark");
+  }
+
+  &.light3 {
+    @include utils.apply-theme(palette3.$palette, "light");
+  }
+
+  &.dark3 {
+    @include utils.apply-theme(palette3.$palette, "dark");
+  }
+
+  &.light4 {
+    @include utils.apply-theme(palette4.$palette, "light");
+  }
+
+  &.dark4 {
+    @include utils.apply-theme(palette4.$palette, "dark");
+  }
+
+  &.light5 {
+    @include utils.apply-theme(palette5.$palette, "light");
+  }
+
+  &.dark5 {
+    @include utils.apply-theme(palette5.$palette, "dark");
+  }
+
+  &.light6 {
+    @include utils.apply-theme(palette6.$palette, "light");
+  }
+
+  &.dark6 {
+    @include utils.apply-theme(palette6.$palette, "dark");
+  }
+}
+
+
+

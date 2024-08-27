@@ -27,8 +27,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
-
+              "src/styles/styles2.scss"
             ],
             "scripts": []
           },
@@ -86,7 +85,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles2.scss"
 
             ],
             "scripts": []

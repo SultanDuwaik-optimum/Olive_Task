@@ -1,65 +1,90 @@
 <div class="container">
-  
-  <h1 appBodyFontColors>Welcome {{clientFirstName}}</h1>
-  <h2 appBodyFontColors>Please  complete your dashboard setup</h2>
+  <h1 class="body-font-color">Welcome {{ clientFirstName }}</h1>
+  <h2 class="body-font-color">Please complete your dashboard setup</h2>
   <form [formGroup]="profileForm" (ngSubmit)="save()">
-    
     <app-profile-image></app-profile-image>
     <div class="form-entries">
-  
-      <h3 appBodyFontColors>{{clientFirstName + " " + clientLastName}}</h3>
-      <h4 appBodyFontColors>ID: {{id}}</h4>
-  
+      <h3 class="body-font-color">
+        {{ clientFirstName + " " + clientLastName }}
+      </h3>
+      <h4 class="body-font-color">ID: {{ id }}</h4>
+
       <div class="grid">
-  
         <app-label-wrapper label="Address" labelAlignment="row">
-          <p appBodyFontColors>{{email}}</p>
+          <p class="body-font-color">{{ email }}</p>
         </app-label-wrapper>
-  
+
         <app-label-wrapper label="Address" labelAlignment="row">
-          <p appBodyFontColors>{{address.city + " - " + address.neighborhood +" - "+ address.street}}</p>
+          <p class="body-font-color">
+            {{
+              address.city +
+                " - " +
+                address.neighborhood +
+                " - " +
+                address.street
+            }}
+          </p>
         </app-label-wrapper>
-  
 
         <mat-form-field floatLabel="always" appearance="outline">
-          <mat-label>contanct name</mat-label>
-          <input type="text" matInput formControlName="contactName" placeholder="John Doe">
-          <mat-error *ngIf="profileForm.get('contactName')!.hasError('required')">Contact name is <strong>required</strong></mat-error>
+          <mat-label>contact name</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="contactName"
+            placeholder="John Doe"
+          />
+          <mat-error
+            *ngIf="profileForm.get('contactName')!.hasError('required')"
+            >Contact name is <strong>required</strong></mat-error
+          >
         </mat-form-field>
-  
 
-        <mat-form-field floatLabel="always" appearance="outline" >
+        <mat-form-field floatLabel="always" appearance="outline">
           <mat-label>Phone Number</mat-label>
-          <span appBodyFontColors matTextPrefix>+962 &nbsp;</span>
-          <input type="tel" matInput formControlName="phoneNumber" placeholder="79-999-9999">
-          <mat-error *ngIf="profileForm.get('phoneNumber')!.hasError('required')">
+          <span class="body-font-color" matTextPrefix>+962 &nbsp;</span>
+          <input
+            type="tel"
+            matInput
+            formControlName="phoneNumber"
+            placeholder="79-999-9999"
+          />
+          <mat-error
+            *ngIf="profileForm.get('phoneNumber')!.hasError('required')"
+          >
             Phone Number is <strong>required</strong>
           </mat-error>
-          <mat-error *ngIf="profileForm.get('phoneNumber')!.hasError('invalidPhoneNumber')">
+          <mat-error
+            *ngIf="
+              profileForm.get('phoneNumber')!.hasError('invalidPhoneNumber')
+            "
+          >
             Please enter a <strong>valid</strong> phone number.
           </mat-error>
         </mat-form-field>
-      
-        <mat-form-field floatLabel="always"  appearance="outline">
-          <textarea [ngClass]="{'border': 'none'}" formControlName="description" matInput  ></textarea>
+
+        <mat-form-field floatLabel="always" appearance="outline">
+          <textarea
+            [ngClass]="{ border: 'none' }"
+            formControlName="description"
+            matInput
+          ></textarea>
           <mat-label>description</mat-label>
-          <mat-error *ngIf="profileForm.get('description')!.hasError('required')">
+          <mat-error
+            *ngIf="profileForm.get('description')!.hasError('required')"
+          >
             Description is <strong>required</strong>
           </mat-error>
         </mat-form-field>
-      
-  
-  
-        
       </div>
     </div>
   </form>
-  <button mat-flat-button  (click)="save()">Save</button>
-  <button mat-stroked-button  class="margin-left" (click)="toggleThemeOptions()">Choose Theme</button>
-  <app-theme-picker (closeTheme)="handleCloseThemeOptions($event)" *ngIf="themeOptionsOpen"></app-theme-picker>
+  <button mat-flat-button (click)="save()">Save</button>
+  <button mat-stroked-button class="margin-left" (click)="toggleThemeOptions()">
+    Choose Theme
+  </button>
+  <app-theme-picker
+    (closeTheme)="handleCloseThemeOptions($event)"
+    *ngIf="themeOptionsOpen"
+  ></app-theme-picker>
 </div>
-
-
-
-
- 

@@ -1,5 +1,4 @@
-// Define new color palettes
-$yet-another-palettes: (
+$palette: (
   primary: (
     0: #000000,
     10: #1d2a2d,
@@ -119,13 +118,3 @@ $yet-another-palettes: (
     100: #ffffff,
   ),
 );
-
-$rest: (
-  secondary: map.get($yet-another-palettes, secondary),
-  neutral: map.get($yet-another-palettes, neutral),
-  neutral-variant: map.get($yet-another-palettes, neutral-variant),
-  error: map.get($yet-another-palettes, error),
-);
-
-$primary: map.merge(map.get($yet-another-palettes, primary), $rest);
-$tertiary: map.merge(map.get($yet-another-palettes, tertiary), $rest);

@@ -1,4 +1,4 @@
-$bold-palettes: (
+$palette: (
   primary: (
     0: #000000,
     10: #1b1b1b,
@@ -118,13 +118,3 @@ $bold-palettes: (
     100: #ffffff,
   ),
 );
-
-$rest: (
-  secondary: map.get($bold-palettes, secondary),
-  neutral: map.get($bold-palettes, neutral),
-  neutral-variant: map.get($bold-palettes, neutral-variant),
-  error: map.get($bold-palettes, error),
-);
-
-$primary: map.merge(map.get($bold-palettes, primary), $rest);
-$tertiary: map.merge(map.get($bold-palettes, tertiary), $rest);

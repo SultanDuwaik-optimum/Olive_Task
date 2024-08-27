@@ -1,90 +1,91 @@
+.container {
+  position: relative;
+  padding: 40px;
+  height: calc(100% - 100px);
+}
 
-
-
- .container{
-    position: relative;
-    padding: 40px;
-    height: calc(100% - 100px);
- }
 h1 {
-    font-weight: 700;
-    font-size: 26px;
+  font-weight: 700;
+  font-size: 26px;
 }
 
 h2 {
-    font-weight: 400;
-    font-size: 20px;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 h3 {
-    font-weight: 700;
-    font-size: 20px;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 h4 {
-    font-weight: 400;
-    font-size: 16px;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 p {
-    font-size: 18px;
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 button {
-    padding: 12px 49px;
-    border-radius: 8px;
-    font-size: 20px;
-    cursor: pointer;
+  padding: 12px 49px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
 
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .margin-left {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 form {
-    display: flex;
-    width: 100%;
-    margin: 80px 0;
+  display: flex;
+  width: 100%;
+  margin: 80px 0;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
 }
 
-/* Form Entries Section */
 .form-entries {
-    margin-left: 40px;
-    flex: 1;
+  margin-left: 40px;
+  flex: 1;
 }
 
-/* Grid Item Styling */
 .grid > * {
-    position: relative; /* Added for positioning of error messages */
+  position: relative;
 }
 
-/* Error Message Styling */
 .errors {
-    position: absolute;
-    bottom: -20px; /* Adjust as necessary */
-    left: 0;
-    color: red;
-    font-size: 14px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  color: red;
+  font-size: 14px;
 }
 
 .grid > *:last-child {
-    grid-column: 1 / -1; 
+  grid-column: 1 / -1;
 }
 
-/* Flexbox for Consistent Height */
-
-
-small{
-    color: var(--error-color);
+small {
+  color: var(--error-color);
 }
 
+.mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 8px;
+}
+
+.custom-search-field {
+  .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 26px;
+  }
+}

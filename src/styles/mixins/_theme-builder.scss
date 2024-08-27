@@ -1,86 +1,58 @@
-@use 'sass:map';
-@use '../../node_modules/@angular/material' as mat;
+@use "../../../node_modules/@angular/material" as mat;
 
-@import '../palettes/palette2.scss';
-
-
-$light-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: $primary,
-    tertiary: $tertiary,
-  )
-));
-
-$dark-theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: $primary,
-    tertiary: $tertiary,
-  ),
-
-));
-
-@include mat.core();
-@include mat.color-variants-backwards-compatibility($light-theme);
-
-@mixin apply-light-theme {
-  @include mat.all-component-themes($light-theme);
+@mixin build-light-theme($light-theme, $dark-theme) {
   @include mat.system-level-colors($light-theme);
-  @include mat.system-level-typography($light-theme);
-
-  mat-toolbar{
-    background-color: mat.get-theme-color($light-theme, tertiary, 50);
-  }
-
-  mat-sidenav-container{
-    background-color: mat.get-theme-color($light-theme, tertiary, 50);
-
-  }
-
-  mat-sidenav-content li:hover{
-    background-color: mat.get-theme-color($light-theme, primary, 50);
-
-  }
 
   .mdc-text-field--outlined {
-    --mdc-outlined-text-field-container-shape: 8px ;
+    --mdc-outlined-text-field-container-shape: 8px;
   }
 
-  .custom-search-field{
+  .custom-search-field {
     .mdc-text-field--outlined {
-      --mdc-outlined-text-field-container-shape: 26px ;
+      --mdc-outlined-text-field-container-shape: 26px;
     }
   }
-  .primary-color{
-    background-color: mat.get-theme-color($light-theme, primary, 50);
-  }
-  
-  .secondary-color{
-    background-color: mat.get-theme-color($light-theme, secondary ,50);
-  }
 
-  .tertiary-color{
+  mat-toolbar {
     background-color: mat.get-theme-color($light-theme, tertiary, 50);
   }
 
-  .neutral-color{
+  mat-sidenav-container {
+    background-color: mat.get-theme-color($light-theme, tertiary, 50);
+  }
+  mat-sidenav-content li:hover {
+    background-color: mat.get-theme-color($light-theme, primary, 50);
+  }
+
+  .primary-color {
+    background-color: mat.get-theme-color($light-theme, primary, 50);
+  }
+
+  .secondary-color {
+    background-color: mat.get-theme-color($light-theme, secondary, 50);
+  }
+
+  .tertiary-color {
+    background-color: mat.get-theme-color($light-theme, tertiary, 50);
+  }
+
+  .neutral-color {
     background-color: mat.get-theme-color($light-theme, neutral, 50);
   }
 
-  .dark-tertiary-color{
-     background-color: mat.get-theme-color($light-theme, tertiary, 20);
+  .dark-tertiary-color {
+    background-color: mat.get-theme-color($light-theme, tertiary, 20);
   }
 
-  .dark-neutral-color{
+  .dark-neutral-color {
     background-color: mat.get-theme-color($dark-theme, neutral, 20);
   }
 
-  .light-tertiary-color{
+  .light-tertiary-color {
     background-color: mat.get-theme-color($dark-theme, tertiary, 50);
   }
 
-  .light-neutral-color{
+  .light-neutral-color {
     background-color: mat.get-theme-color($light-theme, neutral, 50);
   }
 
@@ -92,157 +64,148 @@ $dark-theme: mat.define-theme((
     background-color: mat.get-theme-color($light-theme, primary, 50);
   }
 
-  .toolbar-font-color{
+  .toolbar-font-color {
     color: mat.get-theme-color($light-theme, neutral, 0);
   }
 
-  .body-font-color{
+  .body-font-color {
     color: mat.get-theme-color($light-theme, neutral, 0);
   }
 
-  .body-font-color-light-bg{
+  .body-font-color-light-bg {
     color: mat.get-theme-color($dark-theme, neutral, 0);
   }
-  .body-font-color-dark-bg{
+  .body-font-color-dark-bg {
     color: mat.get-theme-color($dark-theme, neutral, 100);
   }
 
-  .svg-stroke{
+  .svg-stroke {
     stroke: mat.get-theme-color($light-theme, neutral, 0);
   }
 
-  .svg-fill{
-    fill:  mat.get-theme-color($light-theme, neutral, 0);
-
+  .svg-fill {
+    fill: mat.get-theme-color($light-theme, neutral, 0);
   }
 
-  .theme1-primary-color{
+  .theme1-primary-color {
     background-color: #af3000;
   }
-  .theme2-primary-color{
-    background-color:#c78d8d;
+  .theme2-primary-color {
+    background-color: #c78d8d;
   }
-  .theme3-primary-color{
+  .theme3-primary-color {
     background-color: #30a800;
   }
-  .theme4-primary-color{
+  .theme4-primary-color {
     background-color: #85a5d5;
   }
-  .theme5-primary-color{
+  .theme5-primary-color {
     background-color: #a2e3e0;
   }
-  .theme6-primary-color{
+  .theme6-primary-color {
     background-color: #d1d1d1;
   }
-  
-  
 }
 
-
-@mixin apply-dark-theme {
-  @include mat.all-component-themes($dark-theme);
+@mixin build-dark-theme($light-theme, $dark-theme) {
   @include mat.system-level-colors($dark-theme);
-  @include mat.system-level-typography($dark-theme);
 
-  mat-toolbar{
+  mat-toolbar {
     background-color: mat.get-theme-color($light-theme, tertiary, 20);
   }
 
-  mat-sidenav-container{
+  mat-sidenav-container {
     background-color: mat.get-theme-color($light-theme, tertiary, 20);
-
   }
-
-  mat-sidenav-content li:hover{
+  mat-sidenav-content li:hover {
     background-color: mat.get-theme-color($light-theme, primary, 50);
-
   }
+
   .mdc-text-field--outlined {
-    --mdc-outlined-text-field-container-shape: 8px ;
+    --mdc-outlined-text-field-container-shape: 8px;
   }
 
-  .custom-search-field{
+  .custom-search-field {
     .mdc-text-field--outlined {
-      --mdc-outlined-text-field-container-shape: 26px ;
+      --mdc-outlined-text-field-container-shape: 26px;
     }
   }
-  .primary-color{
+  .primary-color {
     background-color: mat.get-theme-color($light-theme, primary, 50);
   }
-  
-  .secondary-color{
+
+  .secondary-color {
     background-color: mat.get-theme-color($light-theme, secondary, 50);
   }
 
-  .tertiary-color{
+  .tertiary-color {
     background-color: mat.get-theme-color($light-theme, tertiary, 20);
   }
 
-  .neutral-color{
+  .neutral-color {
     background-color: mat.get-theme-color($light-theme, neutral, 20);
   }
 
-  .dark-tertiary-color{
-     background-color: mat.get-theme-color($light-theme, tertiary, 20);
+  .dark-tertiary-color {
+    background-color: mat.get-theme-color($light-theme, tertiary, 20);
   }
 
-  .dark-neutral-color{
+  .dark-neutral-color {
     background-color: mat.get-theme-color($light-theme, neutral, 20);
   }
 
-  .light-tertiary-color{
+  .light-tertiary-color {
     background-color: mat.get-theme-color($light-theme, tertiary, 50);
   }
 
-  .light-neutral-color{
+  .light-neutral-color {
     background-color: mat.get-theme-color($light-theme, neutral, 50);
   }
 
   .error-color {
-    background-color: mat.get-theme-color($dark-theme, error,50);
+    background-color: mat.get-theme-color($dark-theme, error, 50);
   }
 
-
-  .toolbar-font-color{
+  .toolbar-font-color {
     color: mat.get-theme-color($dark-theme, neutral, 100);
   }
 
-  .body-font-color{
+  .body-font-color {
     color: mat.get-theme-color($dark-theme, neutral, 100);
   }
 
-  .body-font-color-light-bg{
+  .body-font-color-light-bg {
     color: mat.get-theme-color($dark-theme, neutral, 0);
   }
-  .body-font-color-dark-bg{
+  .body-font-color-dark-bg {
     color: mat.get-theme-color($dark-theme, neutral, 100);
   }
 
-  .svg-stroke{
+  .svg-stroke {
     stroke: mat.get-theme-color($dark-theme, neutral, 100);
   }
 
-  .svg-fill{
-    fill:  mat.get-theme-color($dark-theme, neutral, 100);
-
+  .svg-fill {
+    fill: mat.get-theme-color($dark-theme, neutral, 100);
   }
 
-  .theme1-primary-color{
+
+  .theme1-primary-color {
     background-color: #af3000;
   }
-  .theme2-primary-color{
-    background-color:#c78d8d;
+  .theme2-primary-color {
+    background-color: #c78d8d;
   }
-  .theme3-primary-color{
+  .theme3-primary-color {
     background-color: #30a800;
   }
-  .theme4-primary-color{
+  .theme4-primary-color {
     background-color: #85a5d5;
   }
-  .theme5-primary-color{
+  .theme5-primary-color {
     background-color: #a2e3e0;
   }
-  .theme6-primary-color{
+  .theme6-primary-color {
     background-color: #d1d1d1;
-  } 
+  }
 }

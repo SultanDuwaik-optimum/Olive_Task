@@ -1,144 +1,132 @@
-
-
-.container{
-    position: absolute;
-    // height: 100%;
-    right: 0;
-    top: 0;
-    padding: 25px;
-    box-shadow:-10px 0 40px 0 rgba(0, 0, 0, 0.169); 
-    display: flex;
-    flex-direction: column;
-    // justify-content: space-around;
+.container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 25px;
+  box-shadow: -10px 0 40px 0 rgba(0, 0, 0, 0.169);
+  display: flex;
+  flex-direction: column;
 }
 
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-h1{
-    font-size: 24px;
-    font-weight: 700;
-    display: inline;
-}
-
-h2{
-    font: 24px;
-    font-weight: 700;
-}
-
-.close-button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-input[type="radio"]{
-    height: 15px;
-    width: 15px;
-}
-
-label{
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  display: inline;
+  margin: 0;
 
 }
 
-.colors{
-    margin-top: 20px;
-}
-.colors-list{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+h2 {
+  font: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: #7E7E7E;
 }
 
-.color{
-    height: 56px;
-    width: 56px;
-    border-radius: 28px;
-    margin: auto;
-    transition: all 0.3s ease;
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.colors-list .color:hover{
-    height: 74px;
-    width: 74px;
-    border-radius: 37px;
+input[type="radio"] {
+  height: 15px;
+  width: 15px;
 }
 
-.colors-list div{
-    cursor: pointer;
+.colors {
+  margin-top: 20px;
+}
+.colors-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.theme{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 20px;
-    margin-top: 20px;
+.color {
+  height: 56px;
+  width: 56px;
+  border-radius: 28px;
+  margin: auto;
+  transition: all 0.3s ease;
 }
 
-.theme label{
-    font-size: 24px;
-    font-weight: 600;
+.colors-list .color:hover {
+  height: 74px;
+  width: 74px;
+  border-radius: 37px;
 }
 
-
-
-.color-container{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 0.6fr 1fr;
-    justify-content: space-around;
-    padding: 20px;
-    align-items: center;
-    border-radius: 12px;
-    height: 100px;
-    
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+.colors-list div {
+  cursor: pointer;
 }
 
-
-
-.color-container p{
-    font-size: 20px;
-    font-weight: 700;
-
+.theme {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 20px;
+  margin-top: 20px;
 }
 
-.save-button{
-    width: 100%;
-    border: none;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
+.theme label {
+  font-size: 24px;
+  font-weight: 600;
 }
 
-mat-radio-group{
-    grid-column: 1/-1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.color-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 0.6fr 1fr;
+  justify-content: space-around;
+  padding: 15px;
+  align-items: center;
+  border-radius: 12px;
+
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-:host ::ng-deep .mat-radio-container{
-    height: 10px;
-    width: 10px;
-  }
-  :host ::ng-deep .mat-radio-outer-circle{
-    height: 10px;
-    width: 10px;
-  }
-  :host ::ng-deep .mat-radio-inner-circle{
-    height: 10px;
-    width: 10px;
-  }
-  :host ::ng-deep .mat-radio-button .mat-radio-ripple{
-    height: 20px; /*double of your required circle radius*/
-    width: 20px;  /*double of your required circle radius*/
-    left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
-    top: calc(50% - 10px); /*'10px'-same as your required circle radius*/
-  }
+.color-container p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.save-button {
+  width: 100%;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+mat-radio-group {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+:host ::ng-deep .mat-radio-container {
+  height: 10px;
+  width: 10px;
+}
+:host ::ng-deep .mat-radio-outer-circle {
+  height: 10px;
+  width: 10px;
+}
+:host ::ng-deep .mat-radio-inner-circle {
+  height: 10px;
+  width: 10px;
+}
+:host ::ng-deep .mat-radio-button .mat-radio-ripple {
+  height: 20px;
+  width: 20px;
+  left: calc(50% - 10px);
+  top: calc(50% - 10px);
+}

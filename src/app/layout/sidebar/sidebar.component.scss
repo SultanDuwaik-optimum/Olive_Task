@@ -1,27 +1,30 @@
-
-
-.container{
-    height: calc(100vh - 100px);
-    width: fit-content;
+mat-sidenav-container{
+  height: 100%;
 }
 
-ul{
-    list-style: none;
-    
+.container {
+  height: calc(100vh - 100px);
+  width: fit-content;
+  // height: 100%;
 }
 
-ul li{
-    padding: 20px 40px;
-    cursor: pointer;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-ul li:hover{
-    padding: 20px 40px;
-    cursor: pointer;
+ul li {
+  padding: 20px 40px;
+  cursor: pointer;
 }
 
-ul li a{
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 400;
+ul li:hover {
+  padding: 20px 40px;
+  cursor: pointer;
+}
+
+ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
 }

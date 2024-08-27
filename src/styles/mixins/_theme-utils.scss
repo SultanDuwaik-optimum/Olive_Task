@@ -1,0 +1,45 @@
+@use "theme-builder" as theme-builder;
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin apply-theme($palette, $theme) {
+  $rest: (
+    secondary: map.get($palette, secondary),
+    neutral: map.get($palette, neutral),
+    neutral-variant: map.get($palette, neutral-variant),
+    error: map.get($palette, error),
+  );
+
+  $primary: map.merge(map.get($palette, primary), $rest);
+  $tertiary: map.merge(map.get($palette, tertiary), $rest);
+
+  $light-theme: mat.define-theme(
+    (
+      color: (
+        theme-type: light,
+        primary: $primary,
+        tertiary: $tertiary,
+        use-system-variables: true,
+      ),
+    )
+  );
+
+  $dark-theme: mat.define-theme(
+    (
+      color: (
+        theme-type: dark,
+        primary: $primary,
+        tertiary: $tertiary,
+        use-system-variables: true,
+      ),
+    )
+  );
+
+  @include mat.color-variants-backwards-compatibility($light-theme);
+
+  @if $theme == "light" {
+    @include theme-builder.build-light-theme($light-theme, $dark-theme);
+  } @else {
+    @include theme-builder.build-dark-theme($light-theme, $dark-theme);
+  }
+}

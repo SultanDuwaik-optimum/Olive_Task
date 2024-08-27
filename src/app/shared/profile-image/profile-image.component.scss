@@ -1,34 +1,31 @@
-
-
-
-.profile-image{
-    height: 160px;
-    width: 160px;
-    border-radius: 80px;
-    position: relative;
+.profile-image {
+  height: 160px;
+  width: 160px;
+  border-radius: 80px;
+  position: relative;
 }
 
-.profile-image img{
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    object-fit: cover;
+.profile-image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  object-fit: cover;
 }
 
-.add-button{
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background-color: white;
-    height: 32px;
-    width: 32px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    margin: auto;
-    font-size: 25px;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.add-button {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: white;
+  height: 32px;
+  width: 32px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: auto;
+  font-size: 25px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

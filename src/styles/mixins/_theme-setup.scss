@@ -1,0 +1,18 @@
+@use "@angular/material" as mat;
+
+$default-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$violet-palette,
+      tertiary: mat.$violet-palette,
+      use-system-variables: true,
+    ),
+  )
+);
+
+
+@mixin apply-all-component-themes(){
+    @include mat.all-component-themes($default-theme);
+}
+   

@@ -1,5 +1,4 @@
-// Note: Color palettes are generated from primary: #4CAF50, secondary: #FF5722, tertiary: #03A9F4, neutral: #9E9E9E
-$palettes: (
+$palette: (
   primary: (
     0: #000000,
     10: #0a2b00,
@@ -119,12 +118,3 @@ $palettes: (
     100: #ffffff,
   ),
 );
-
-$rest: (
-  secondary: map.get($palettes, secondary),
-  neutral: map.get($palettes, neutral),
-  neutral-variant: map.get($palettes, neutral-variant),
-  error: map.get($palettes, error),
-);
-$primary: map.merge(map.get($palettes, primary), $rest);
-$tertiary: map.merge(map.get($palettes, tertiary), $rest);

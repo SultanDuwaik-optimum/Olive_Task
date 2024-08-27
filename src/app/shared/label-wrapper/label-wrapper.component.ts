@@ -1,14 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { BodyFontColorsDirective } from 'src/app/directives/body-font-color.directive';
-import { SvgFillDirective } from 'src/app/directives/svg-fill.directive';
 
 @Component({
   selector: 'app-label-wrapper',
   standalone: true,
-  imports: [CommonModule ,SvgFillDirective, BodyFontColorsDirective],
+  imports: [CommonModule ],
   templateUrl: './label-wrapper.component.html',
-  styleUrl: './label-wrapper.component.css'
+  styleUrl: './label-wrapper.component.scss'
 })
 export class LabelWrapperComponent {
   @Input() label! : string;

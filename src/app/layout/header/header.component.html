@@ -1,59 +1,27 @@
 <mat-toolbar>
-
   <mat-toolbar-row>
     <div class="left">
-      <div appToolBarFontColor class="company-logo">Company Logo</div>
+      <div class="toolbar-font-color company-logo" >Company Logo</div>
 
-      <!-- <input  appTextField type="search" class="search-bar"> -->
-      <mat-form-field class="custom-search-field" appearance="outline" color="primary">
-        <!-- <mat-label>search..</mat-label> -->
+      <mat-form-field
+        class="custom-search-field"
+        appearance="outline"
+        color="primary"
+      >
         <input matInput type="search" [(ngModel)]="searchValue" />
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
     </div>
     <div class="right">
-      <div class="flag">
-        <img
-          src="assets/flags/jordan.svg"
-          height="31px"
-          width="31px"
-          alt="language flag"
-          class="flag"
-        />
-      </div>
+      <div class="flag"></div>
       <div class="notification">
-        <svg
-          appSvgStroke
-          width="24"
-          height="27"
-          viewBox="0 0 24 27"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            
-            d="M19.3333 8.33333C19.3333 6.38841 18.5607 4.52315 17.1855 3.14788C15.8102 1.77262 13.9449 1 12 1C10.0551 1 8.18982 1.77262 6.81455 3.14788C5.43928 4.52315 4.66667 6.38841 4.66667 8.33333C4.66667 16.8889 1 19.3333 1 19.3333H23C23 19.3333 19.3333 16.8889 19.3333 8.33333Z"
-            stroke="black"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M14.1137 24.2188C13.8988 24.5892 13.5904 24.8967 13.2193 25.1104C12.8482 25.3241 12.4275 25.4366 11.9992 25.4366C11.571 25.4366 11.1502 25.3241 10.7792 25.1104C10.4081 24.8967 10.0996 24.5892 9.88477 24.2188"
-            stroke="black"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        <app-notification-svg></app-notification-svg>
       </div>
       <div class="profile" (click)="navigateToProfile()">
-        <div appThemeColor="secondary" class="profile-img">
-          <!-- <img src="assets/images/man.jpg" alt=""> -->
-        </div>
+        <div appThemeColor="secondary" class="profile-img"></div>
         <div class="profile-info">
-          <div appToolBarFontColor class="user-name">Client Name</div>
-          <div appToolBarFontColor class="user-role">Admin</div>
+          <div class="toolbar-font-color user-name">Client Name</div>
+          <div class="toolbar-font-color user-role">Admin</div>
         </div>
       </div>
     </div>
