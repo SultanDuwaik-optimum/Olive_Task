@@ -50,17 +50,25 @@ input[type="radio"] {
 }
 
 .color {
-  height: 56px;
-  width: 56px;
+  height: 50px;
+  width: 50px;
   border-radius: 28px;
   margin: auto;
   transition: all 0.3s ease;
+  box-shadow: -5px 0 5px 0 rgba(0, 0, 0, 0.169);
+
 }
 
 .colors-list .color:hover {
   height: 74px;
   width: 74px;
-  border-radius: 37px;
+  border-radius: 50%;
+}
+
+.colors-list .color:hover, .selected{
+  height: 74px;
+  width: 74px;
+  border-radius: 50%;
 }
 
 .colors-list div {
@@ -130,3 +138,4 @@ mat-radio-group {
   left: calc(50% - 10px);
   top: calc(50% - 10px);
 }
+

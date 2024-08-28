@@ -1,18 +1,14 @@
-export interface Address{
-    city: string,
-    neighborhood: string,
-    street: string
+export interface Address {
+  city: string;
+  neighborhood: string;
+  street: string;
 }
 
-export interface CountryInfo{
-    flag: string;
-    name: string;
-    keyCode: number;
-    countryFormat: string;
-}
-
-export interface Palettes {
-  [key: string]: { [key: string]: string }; 
+export interface CountryInfo {
+  flag: string;
+  name: string;
+  keyCode: number;
+  countryFormat: string;
 }
 
 export interface Theme {
@@ -27,22 +23,21 @@ export interface Theme {
   darkBodyFontColor: string;
   lightToolbarFontColor: string;
   darkToolbarFontColor: string;
-  
 }
 
 export interface Themes {
   themes: Theme[];
 }
 
-
 export type ThemeColor =
-| 'primary'
-| 'secondary'
-| 'tertiary'
-| 'error'
-| 'neutral'
-| 'lightTertiary'
-| 'darkTertiary'
-| 'lightNeutral'
-| 'darkNeutral';
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'error'
+  | 'neutral'
+  | 'lightTertiary'
+  | 'darkTertiary'
+  | 'lightNeutral'
+  | 'darkNeutral';
 
+export type Mode = 'light' | 'dark';

@@ -1,265 +1,68 @@
 @use "mixins/theme-setup" as setup;
 @use "@angular/material" as mat;
+@use "mixins/custom-mixins" as custom-mixins;
 
 :root {
   box-sizing: border-box;
-  @include setup.apply-all-component-themes;
-
   font-family: "Nunito Sans", sans-serif;
-  --primary: #f15928;
-  --secondary: #bbbfe8;
-  --tertiary: #e1eaf9;
-  --error: #ff3a5d;
-  --neutral: #f3f3f3;
-  --dark-tertiary: #232323;
-  --dark-neutral: #565656;
-  --dark-body-font-color: #ffffff;
-  --light-body-font-color: #000000;
-  --dark-tool-bar-font-color: #ffffff;
-  --light-tool-bar-font-color: #ffffff;
 
-  --theme1-primary-color: #ffffff;
-  --theme2-primary-color: #ffffff;
-  --theme3-primary-color: #ffffff;
-  --theme4-primary-color: #ffffff;
-  --theme5-primary-color: #ffffff;
-  --theme6-primary-color: #ffffff;
-
-  --sys-background: var(--neutral);
-  --sys-error: var(--error);
-  --sys-error-container: var(--neutral);
-  --sys-inverse-on-surface: #ffffff;
-  --sys-inverse-primary: var(--primary);
-  --sys-inverse-surface: var(--dark-neutral);
-  --sys-on-background: black;
-  --sys-on-error: var(--error);
-  --sys-on-error-container: var(--error);
-  --sys-on-primary: #ffffff;
-  --sys-on-primary-container: #ffffff;
-  --sys-on-primary-fixed: #ffffff;
-  --sys-on-primary-fixed-variant: #ffffff;
-  --sys-on-secondary: #ffffff;
-  --sys-on-secondary-container: #ffffff;
-  --sys-on-secondary-fixed: #ffffff;
-  --sys-on-secondary-fixed-variant: #ffffff;
-  --sys-on-surface: black;
-  --sys-on-surface-variant: #5a413a;
-  --sys-on-tertiary: black;
-  --sys-on-tertiary-container: #131c27;
-  --sys-on-tertiary-fixed: #131c27;
-  --sys-on-tertiary-fixed-variant: #3e4753;
-  --sys-outline: var(--primary);
-  --sys-outline-variant: #e2bfb5;
-  --sys-primary: var(--primary);
-  --sys-primary-container: var(--primary);
-  --sys-primary-fixed: var(--primary);
-  --sys-primary-fixed-dim: var(--primary);
-  --sys-scrim: #000000;
-  --sys-secondary: var(--secondary);
-  --sys-secondary-container: var(--secondary);
-  --sys-secondary-fixed: var(--secondary);
-  --sys-secondary-fixed-dim: var(--secondary);
-  --sys-shadow: #0000002b;
-  --sys-surface: var(--neutral);
-  --sys-surface-bright: var(--neutral);
-  --sys-surface-container: var(--neutral);
-  --sys-surface-container-high: var(--neutral);
-  --sys-surface-container-highest: var(--neutral);
-  --sys-surface-container-low: var(--neutral);
-  --sys-surface-container-lowest: var(--neutral);
-  --sys-surface-dim: var(--neutral);
-  --sys-surface-tint: var(--neutral);
-  --sys-surface-variant: var(--neutral);
-  --sys-tertiary: var(--tertiary);
-  --sys-tertiary-container: var(--tertiary);
-  --sys-tertiary-fixed: var(--tertiary);
-  --sys-tertiary-fixed-dim: var(--tertiary);
+  
+  @include setup.define-default-variables;
+  @include setup.apply-all-component-themes;
+  @include custom-mixins.theme-variables();
 }
 
 body {
   padding: 0;
   margin: 0;
-
   height: 100%;
 
   &.light {
-    mat-toolbar {
-      background-color: var(--sys-tertiary);
-    }
+   mat-toolbar {background-color: var(--sys-tertiary);}
+   mat-sidenav-container {background-color: var(--sys-tertiary);}
+   mat-sidenav-content li:hover {background-color: var(--sys-primary);} 
 
-    mat-sidenav-container {
-      background-color: var(--sys-tertiary);
-    }
-    mat-sidenav-content li:hover {
-      background-color: var(--sys-primary);
-    }
+  //  mat-form-field input::placeholder{color: yellow !important;}
+  //  mat-form-field mat-label{color: yellow !important;}
+  //  mat-form-field mat-label:hover{color: red !important;}
 
-    .primary-color {
-      background-color: var(--sys-primary);
-    }
+  .primary-color {background-color: var(--sys-primary);}
+  .secondary-color {background-color: var(--sys-secondary);}
+  .tertiary-color {background-color: var(--sys-tertiary);}
+  .neutral-color {background-color: var(--neutral);}
+  .dark-tertiary-color {background-color: var(--dark-tertiary);}
+  .dark-neutral-color {background-color: var(--dark-neutral);}
+  .light-tertiary-color {background-color: var(--sys-tertiary);}
+  .light-neutral-color {background-color: var(--neutral);}
+  .error-color {background-color: var(--error);}
+  .toolbar-font-color {color: var(--sys-on-tertiary);}
+  .body-font-color {color: var(--sys-on-surface);}
+  .body-font-color-light-bg {color: var(--light-body-font-color);}
+  .body-font-color-dark-bg {color: var(--dark-body-font-color);}
+  .svg-stroke {stroke: var(--sys-on-tertiary);}
+  .svg-fill {fill: var(--sys-on-tertiary);}
 
-    .secondary-color {
-      background-color: var(--sys-secondary);
-    }
-
-    .tertiary-color {
-      background-color: var(--sys-tertiary);
-    }
-
-    .neutral-color {
-      background-color: var(--neutral);
-    }
-
-    .dark-tertiary-color {
-      background-color: var(--dark-tertiary);
-    }
-
-    .dark-neutral-color {
-      background-color: var(--dark-neutral);
-    }
-
-    .light-tertiary-color {
-      background-color: var(--sys-tertiary);
-    }
-
-    .light-neutral-color {
-      background-color: var(--neutral);
-    }
-
-    .error-color {
-      background-color: var(--error);
-    }
-
-    .toolbar-font-color {
-      color: var(--sys-on-tertiary);
-    }
-
-    .body-font-color {
-      color: var(--sys-on-surface);
-    }
-
-    .body-font-color-light-bg {
-      color: var(--light-body-font-color);
-    }
-    .body-font-color-dark-bg {
-      color: var(--dark-body-font-color);
-    }
-
-    .svg-stroke {
-      stroke: var(--sys-on-tertiary);
-    }
-
-    .svg-fill {
-      fill: var(--sys-on-tertiary);
-    }
-
-    .theme1-primary-color {
-      background-color: var(--theme1-primary-color);
-    }
-    .theme2-primary-color {
-      background-color: var(--theme2-primary-color);
-    }
-    .theme3-primary-color {
-      background-color: var(--theme3-primary-color);
-    }
-    .theme4-primary-color {
-      background-color: var(--theme4-primary-color);
-    }
-    .theme5-primary-color {
-      background-color: var(--theme5-primary-color);
-    }
-    .theme6-primary-color {
-      background-color: var(--theme6-primary-color);
-    }
   }
   &.dark {
-    mat-toolbar {
-      background-color: var(--dark-tertiary);
-    }
+    mat-toolbar {background-color: var(--dark-tertiary);}
+    mat-sidenav-container {background-color: var(--dark-tertiary);}
+    mat-sidenav-content li:hover {background-color: var(--sys-primary);}
 
-    mat-sidenav-container {
-      background-color: var(--dark-tertiary);
-    }
-    mat-sidenav-content li:hover {
-      background-color: var(--sys-primary);
-    }
+  .primary-color {background-color: var(--sys-primary);}
+  .secondary-color {background-color: var(--sys-secondary);}
+  .tertiary-color {background-color: var(--dark-tertiary);}
+  .neutral-color {background-color: var(--dark-neutral);}
+  .dark-tertiary-color {background-color: var(--dark-tertiary);}
+  .dark-neutral-color {background-color: var(--dark-neutral);}
+  .light-tertiary-color {background-color: var(--sys-tertiary);}
+  .light-neutral-color {background-color: var(--neutral);}
+  .error-color {background-color: var(--error);}
+  .toolbar-font-color {color: var(--dark-tool-bar-font-color);}
+  .body-font-color {color: var(--dark-body-font-color);}
+  .body-font-color-light-bg {color: var(--light-body-font-color);}
+  .body-font-color-dark-bg {color: var(--dark-body-font-color);}
+  .svg-stroke {stroke: var(--dark-tool-bar-font-color);}
+  .svg-fill {fill: var(--dark-body-font-color);}
 
-    .primary-color {
-      background-color: var(--sys-primary);
-    }
-
-    .secondary-color {
-      background-color: var(--sys-secondary);
-    }
-
-    .tertiary-color {
-      background-color: var(--dark-tertiary);
-    }
-
-    .neutral-color {
-      background-color: var(--dark-neutral);
-    }
-
-    .dark-tertiary-color {
-      background-color: var(--dark-tertiary);
-    }
-
-    .dark-neutral-color {
-      background-color: var(--dark-neutral);
-    }
-
-    .light-tertiary-color {
-      background-color: var(--sys-tertiary);
-    }
-
-    .light-neutral-color {
-      background-color: var(--neutral);
-    }
-
-    .error-color {
-      background-color: var(--error);
-    }
-
-    .toolbar-font-color {
-      color: var(--dark-tool-bar-font-color);
-    }
-
-    .body-font-color {
-      color: var(--dark-body-font-color);
-    }
-
-    .body-font-color-light-bg {
-      color: var(--light-body-font-color);
-    }
-    .body-font-color-dark-bg {
-      color: var(--dark-body-font-color);
-    }
-
-    .svg-stroke {
-      stroke: var(--dark-tool-bar-font-color);
-    }
-
-    .svg-fill {
-      fill: var(--dark-body-font-color);
-    }
-
-    .theme1-primary-color {
-      background-color: var(--theme1-primary-color);
-    }
-    .theme2-primary-color {
-      background-color: var(--theme2-primary-color);
-    }
-    .theme3-primary-color {
-      background-color: var(--theme3-primary-color);
-    }
-    .theme4-primary-color {
-      background-color: var(--theme4-primary-color);
-    }
-    .theme5-primary-color {
-      background-color: var(--theme5-primary-color);
-    }
-    .theme6-primary-color {
-      background-color: var(--theme6-primary-color);
-    }
   }
 }
