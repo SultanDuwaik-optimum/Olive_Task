@@ -18,9 +18,10 @@ body {
   height: 100%;
 
   &.light {
-   mat-toolbar {background-color: var(--sys-tertiary);}
-   mat-sidenav-container {background-color: var(--sys-tertiary);}
-   mat-sidenav-content li:hover {background-color: var(--sys-primary);} 
+
+   mat-toolbar {background-color: var(--sys-tertiary);font-family: inherit;} // toolbar
+   mat-sidenav-container {background-color: var(--sys-tertiary);}            // sidenav
+   mat-sidenav-content li:hover {background-color: var(--sys-primary);}      // side nav list item hover
 
   //  mat-form-field input::placeholder{color: yellow !important;}
   //  mat-form-field mat-label{color: yellow !important;}
@@ -39,14 +40,14 @@ body {
   .body-font-color {color: var(--sys-on-surface);}
   .body-font-color-light-bg {color: var(--light-body-font-color);}
   .body-font-color-dark-bg {color: var(--dark-body-font-color);}
-  .svg-stroke {stroke: var(--sys-on-tertiary);}
-  .svg-fill {fill: var(--sys-on-tertiary);}
+  .svg-stroke {stroke: var(--light-tool-bar-font-color);}    // SVG that its "stroke" needs to be colored
+  .svg-fill {fill: var(--light-body-font-color);}            // SVG that its "fill" needs to be colored
 
   }
   &.dark {
-    mat-toolbar {background-color: var(--dark-tertiary);}
-    mat-sidenav-container {background-color: var(--dark-tertiary);}
-    mat-sidenav-content li:hover {background-color: var(--sys-primary);}
+    mat-toolbar {background-color: var(--dark-tertiary);}                 // nav bar
+    mat-sidenav-container {background-color: var(--dark-tertiary);}       // side baf
+    mat-sidenav-content li:hover {background-color: var(--sys-primary);}  // side nav list item hover
 
   .primary-color {background-color: var(--sys-primary);}
   .secondary-color {background-color: var(--sys-secondary);}
@@ -61,8 +62,8 @@ body {
   .body-font-color {color: var(--dark-body-font-color);}
   .body-font-color-light-bg {color: var(--light-body-font-color);}
   .body-font-color-dark-bg {color: var(--dark-body-font-color);}
-  .svg-stroke {stroke: var(--dark-tool-bar-font-color);}
-  .svg-fill {fill: var(--dark-body-font-color);}
+  .svg-stroke {stroke: var(--dark-tool-bar-font-color);}    // SVG that its "stroke" needs to be colored
+  .svg-fill {fill: var(--dark-body-font-color);}            // SVG that its "fill" needs to be colored
 
   }
 }

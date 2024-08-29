@@ -1,15 +1,10 @@
+/*
+  this mixin will only define default variables,
+  most of them will be changed later dynamicly,
+  they are only important when the website opens for the first time
+*/
+
 @mixin theme-variables {
-  --primary: #8d8d8d;
-  --secondary: #d9d9d9;
-  --tertiary: #e8e8e8;
-  --error: #ff3a5d;
-  --neutral: #ffffff;
-  --dark-tertiary: #232323;
-  --dark-neutral: #565656;
-  --dark-body-font-color: #ffffff;
-  --light-body-font-color: #000000;
-  --dark-tool-bar-font-color: #ffffff;
-  --light-tool-bar-font-color: #ffffff;
 
   --sys-background: var(--neutral);
   --sys-error: var(--error);
@@ -28,9 +23,9 @@
   --sys-on-secondary-container: #ffffff;
   --sys-on-secondary-fixed: #ffffff;
   --sys-on-secondary-fixed-variant: #ffffff;
-//   --sys-on-surface: black;
-//   --sys-on-surface-variant: var(--light-body-font-color);
-//   --sys-on-tertiary: var(--light-tool-bar-font-color);
+  // --sys-on-surface: black;
+  // --sys-on-surface-variant: var(--light-body-font-color);
+  --sys-on-tertiary: var(--light-body-font-color);
   --sys-on-tertiary-container: #131c27;
   --sys-on-tertiary-fixed: #131c27;
   --sys-on-tertiary-fixed-variant: #3e4753;

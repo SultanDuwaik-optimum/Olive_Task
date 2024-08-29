@@ -6,6 +6,7 @@
   box-shadow: -10px 0 40px 0 rgba(0, 0, 0, 0.169);
   display: flex;
   flex-direction: column;
+  z-index: 999;
 }
 
 .header {
@@ -23,7 +24,7 @@ h1 {
 }
 
 h2 {
-  font: 24px;
+  font-size: 20px;
   font-weight: 700;
   margin: 0;
   color: #7E7E7E;
@@ -47,6 +48,7 @@ input[type="radio"] {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 10px;
 }
 
 .color {
@@ -138,4 +140,5 @@ mat-radio-group {
   left: calc(50% - 10px);
   top: calc(50% - 10px);
 }
+
 

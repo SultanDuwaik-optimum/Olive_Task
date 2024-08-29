@@ -98,11 +98,9 @@ export class ThemeSwitcherService implements OnDestroy {
 
 
     if (this.currentMode == 'light') {
-      // primary color
       root.style.setProperty('--sys-on-primary', theme.neutral);
 
       root.style.setProperty('--sys-on-surface-variant',theme.lightBodyFontColor);
-      // root.style.setProperty('--sys-on-surface-variant',"yellow");
       root.style.setProperty('--sys-on-surface',theme.lightBodyFontColor);
       root.style.setProperty('--sys-on-tertiary',theme.lightToolbarFontColor);
       

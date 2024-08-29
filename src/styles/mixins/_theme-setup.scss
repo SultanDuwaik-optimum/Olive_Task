@@ -1,5 +1,7 @@
 @use "@angular/material" as mat;
 
+
+
 $default-theme: mat.define-theme(
   (
     color: (
@@ -11,9 +13,40 @@ $default-theme: mat.define-theme(
   )
 );
 
+/*
+  this mixin (mat.all-component-themes) styles all the mat-elements, it requires a theme.
+*/
+
 @mixin apply-all-component-themes() {
   @include mat.all-component-themes($default-theme);
 }
+
+
+/*
+  primary -------------------> color of buttons, hoverd over elements and text fields borders,
+                               its also considered the main color that represents the whole theme
+                               in the Color Picker Component.
+
+  secondary -----------------> color of profile picture, not used much might be changed later.
+
+  tertiary ------------------> colors of the nav-bar and side-bar. (light theme)
+
+  error ---------------------> color of the errors displayed.
+
+  neutral -------------------> color of the background of the pages and containers.(light theme)
+
+  dark-tertiary -------------> color of the nav-bar and side-bar. (dark theme)
+
+  dark-neutral --------------> color of background of the pages and containers. (dark theme)
+
+  dark-body-font-color ------> color of the font that is displayed on top of neutral. (dark theme)
+
+  light-body-font-color -----> color of the font that is displayed on top of neutral. (light theme)
+
+  dark-tool-bar-font-color --> color of the font that is displayed on top of trtiary. (dark theme)
+
+  light-tool-bar-font-color -> color of the font that is displayed on top of trtiary. (light theme)
+*/ 
 
 @mixin define-default-variables(){
   --primary: #8d8d8d;
